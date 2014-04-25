@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>About this site:</p>
+
+<p>I'm Ali.  This is my climbing logbook.<p>
+
+<img type="image/png" href="http://127.0.0.1:8000/image">
+{% endblock %}

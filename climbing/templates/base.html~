@@ -1,0 +1,31 @@
+{% load static from staticfiles %}
+<!DOCTYPE HTML PUBLIC "'//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="http://127.0.0.1:8000/static/css/test.css">
+    <title>{% block title %}Ali's climbing logbook{% endblock %}</title>
+</head>
+
+<body>
+{% block header %}
+<div id="container">
+    <div id="header">
+      <h1 id="logo">Ali's Climbing</h1>
+      <ul id="nav-global">
+        <li id="nav-homepage"><a href="">Home</a></li>
+        <li id="nav-logbook"><a href="/logbook">Logbook</a></li>
+        <li id="nav-stats"><a href="/stats">Stats</a></li>
+        <li id="nav-weblog"><a href="/blog">My Blog</a></li>
+        <li id="nav-about"><a href="/about">About</a></li>
+      </ul>
+    </div>
+{% endblock %}
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+    <hr>
+    <p>Thanks for visiting my site.</p>
+    {% endblock %}
+</body>
+</html>

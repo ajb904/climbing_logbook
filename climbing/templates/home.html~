@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>This website is Ali's online climbing logbook</p>
+
+<table>
+<thead>
+<tr><th>Date climbed</th><th>Route name</th><th>Grade</th><th> Partner(s)</th><th>Location</th></tr>
+</thead>
+
+{% for l in latest %}
+<tr><td> {{ l.date_climbed }} </td><td><a href="{% url 'logbook.views.route' l.route_name.id %}"> {{ l.route_name }}</td><td> {{ l.route_name.grade }} </td><td> {{ l.partner.all | join:', ' }}</td><td> {{ l.route_name.sector }}, {{ l.route_name.sector.crag }}</td></tr>
+{% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>{{ route.route_name }}</h2>
+
+<p>Grade: {{ route.system }} {{ route.grade }}</p>
+
+<p>Crag: {{ route.sector }}, {{ route.sector.crag.name }}, {{ route.sector.crag.area }} </p>
+
+<p>Rock type: {{ route.sector.crag.rock_type }}</p>
+
+<p>Notes: {{ route.notes }}</p>
+
+{% if route.log_entry_set %}
+
+<p> Climbed on:</p>
+
+{% for le in route.log_entry_set.all %}
+
+<p>{{ le.date_climbed }} with {{ le.partner.all | join:', ' }}</p>
+
+{% endfor %}
+
+{% else %}
+<p> Not climbed yet </p>
+
+{% endif %}
+
+{% endblock %}

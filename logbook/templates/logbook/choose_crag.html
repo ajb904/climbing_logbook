@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Pick a crag:</h2>
+<a href="/logbook/new_crag/">Add new crag</a>
+
+{% for area in areas %}
+<p>{{ area }}</p>
+<ul>
+{% for crag in area.crag_set.all %}
+<li>{{ crag }}
+{% endfor %}
+</ul>
+{% endfor %}
+
+{% endblock %}
